@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    <style type="text/css">
+    button{
+      width:80px;
+      height:50px;
+      margin-top:20px;
+    }
+    .contain{
+      width:100px;
+      height:100px;
+      font-size: 16px;
+      vertical-align: top;
+      display: inline-block;
+    }
+    </style>
+  </head>
+  <body>
+    <form method="POST" action=/add>
+        {% csrf_token %}
+      <button type="add" name="add" value="Add a book">Add a book!</button>
+    </form>
+    {% if individual in the_person %}
+    <h1>Welcome,{{individual.first_name}}</h1>
+    {% endif %}
+    <h2>Recent Book Reviews:</h2>
+  <div class="contain">
+    {% for book in books %}
+    <h3>{{book.title}}</h3>
+    <h3>{{book.author}}</h3>
+    <h4>{{book.review}}</h4>
+    <h5>{{book.rating}}</h5>
+      {% for individual in persons %}
+        <a>Posted by {{individual.first_name}}
+      {% endfor %}
+    {% endfor %}
+  </div>
+  </form>
+  </body>
+</html>

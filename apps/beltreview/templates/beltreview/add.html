@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a book</title>
+  </head>
+  <style type="text/css">
+  .container{
+    width:300px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  </style>
+  <body>
+  <div class="container">
+    <h2>Add a New Book Title and Review!</h2>
+    <form method="POST" action="/books">
+      {% csrf_token %}
+    Book Title:<input type="text" name="title">
+    <h3>Author:</h3>
+      Add a new author:<input type="text" name="author">
+      Review:<textarea name="review" rows="8" cols="80"></textarea>
+      Rating:<input type="integer" name= "rating">Out of 5
+      <button type="submit" name="add_book">Add to list</button>
+      <button type="redirect" name="go_back">Go back to books</button>
+    </form>
+  </div>
+  </body>
+</html>
