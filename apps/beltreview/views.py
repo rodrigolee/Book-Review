@@ -33,7 +33,3 @@ def bookpage(request):
         }
         Book.objects.create(title = request.POST.get('title', False), review=request.POST.get('review', False), rating=request.POST.get('rating', False))
         return render(request,'beltreview/books.html', context)
-def add(request):
-    # if request.method == "POST":
-        print Book.objects.all()
-        return render(request,'beltreview/add.html')
